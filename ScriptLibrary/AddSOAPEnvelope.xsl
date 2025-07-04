@@ -1,0 +1,1 @@
+<xsl:stylesheet xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">   <xsl:output method="xml" indent="yes"/>   <xsl:template match="/">      <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">         <xsl:copy-of select="node()"/>      </soap:Envelope>   </xsl:template></xsl:stylesheet>
