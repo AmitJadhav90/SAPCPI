@@ -22,3 +22,12 @@ def Message processData(Message message) {
     message.setBody(resultList)
     return message
 }
+
+
+//Looping Over Filtered Files
+//Use:
+//General Splitter or ForEach to loop through resultList
+//Inside the loop:
+//Use SFTP Receiver Adapter with Get operation
+//Provide ${property.Name} or ${property.FileName} for dynamic file name
+
