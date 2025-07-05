@@ -1,0 +1,24 @@
+import com.sap.gateway.ip.core.customdev.util.Message
+import java.text.SimpleDateFormat
+import java.util.*
+
+def Message processData(Message message) {
+    def messageLog = messageLogFactory.getMessageLog(message)
+    def fileList = message.getBody(List)
+    def resultList = []
+
+    def dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss")
+    def now = new Date()
+    def threshold = now - 1 * 24 * 60 * 60 * 1000  // 1 day ago
+
+    fileList.each { file ->
+        def modTime = dateFormat.parse(file.get("LastModified"))
+        def name = file.get("Name")
+        if (name.endsWith(".csv") && modTime.after(threshold)) {
+            resultList.add(file)
+        }
+    }
+
+    message.setBody(resultList)
+    return message
+}
