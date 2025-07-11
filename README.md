@@ -66,7 +66,7 @@ This repository provides templates, reusable assets, and automation tools to str
 
 ## 📚 Documentation & Onboarding Kits
 
-1. **Architecture Templates** (draw.io, PowerPoint)
+1. **Architecture Templates** 
 2. **Standard Naming Conventions** for artifacts
 3. **Checklist Templates** for deployment and cutover readiness
 
